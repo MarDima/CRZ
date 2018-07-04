@@ -16,11 +16,11 @@ class Action: public G4VUserActionInitialization{
 public:
     void Build() const override {
         SetUserAction(new PrimaryGen());
-        auto run = new RunAction;
-        auto event = new EventAction(run);
-        SetUserAction(run);
-        SetUserAction(event);
-        SetUserAction(new StepAction(event));
+       // auto run = new RunAction;
+      //  auto event = new EventAction(run);
+      //  SetUserAction(run);
+      //  SetUserAction(event);
+      //  SetUserAction(new StepAction(event));
     }
 };
 #endif //TEMPLATE_ACTION_HH

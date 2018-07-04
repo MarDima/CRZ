@@ -11,7 +11,7 @@
 class EventAction;
 class StepAction : public G4UserSteppingAction{
     EventAction* event;
-    G4String pName;
+
 public:
     explicit StepAction(EventAction *event);
 
@@ -19,3 +19,4 @@ public:
 
 };
 #endif //TEMPLATE_STEPACTION_HH
+

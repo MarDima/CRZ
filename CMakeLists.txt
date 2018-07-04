@@ -4,8 +4,7 @@ project(${NAME})
 
 set(CMAKE_CXX_STANDARD 11)
 
-#set(CMAKE_PREFIX_PATH /home/idalov/geant4/geant4-install)
-set(CMAKE_PREFIX_PATH /home/student/geant4/geant4-install)
+set(CMAKE_PREFIX_PATH /home/forwolk/libs/geant4-build/)
 
 find_package(Geant4 REQUIRED ui_all vis_all)
 
@@ -16,7 +15,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
-add_executable(${NAME} main.cpp ${sources} ${headers})
+add_executable(${NAME} main.cpp ${sources} ${headers} src/ComandMan.cc include/ComandMan.hh)
 target_link_libraries(${NAME} ${Geant4_LIBRARIES})
 
 set(M_SCRIPTS

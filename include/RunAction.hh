@@ -1,14 +1,27 @@
 //
-// Created by idalov on 12.05.18.
+// Created by student on 27.04.18.
 //
 
-#ifndef TEMPLATE_RUNACTION_HH
-#define TEMPLATE_RUNACTION_HH
+#ifndef M_DGW_4_RUNACTION_HH
+#define M_DGW_4_RUNACTION_HH
+
 
 #include <G4UserRunAction.hh>
+#include <map>
+#include <G4String.hh>
 
-class RunAction: public G4UserRunAction{
+class RunAction : public G4UserRunAction {
+public:
+    RunAction();
+    ~RunAction();
+    void BeginOfRunAction(const G4Run* aRun);
+    void EndOfRunAction(const G4Run* aRun);
+    void AddEnergy(G4String name,G4double Energy);
 
-
+private:
+    std::map<G4double, G4int>* result;
+    G4double orb3;
+    G4double orb2;
 };
-#endif //TEMPLATE_RUNACTION_HH
+
+#endif //M_DGW_4_RUNACTION_HH
